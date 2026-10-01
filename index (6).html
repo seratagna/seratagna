@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seratagna | ሰራተኛ - Find the right worker in Ethiopia</title>
+<meta name="description" content="Seratagna connects employers with reliable workers in Bale Robe and across Ethiopia.">
+<style>
+:root{--green:#14532d;--green2:#166534;--gold:#e8a317;--ink:#17211b;--muted:#5b6b62;--line:#dfe6e1;--bg:#f5f8f6;--wa:#1fa855}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:"Noto Sans Ethiopic","Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font-weight:800;font-size:22px;color:var(--green);text-decoration:none}
+.logo small{color:var(--ink);font-weight:600;font-size:15px;margin-left:6px}
+nav{display:flex;align-items:center;gap:22px}
+nav a{text-decoration:none;font-weight:600;font-size:15px;color:var(--muted)}
+nav a:hover{color:var(--green)}
+select,input,textarea{font:inherit;color:inherit}
+.lang{border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#fff}
+.burger{display:none;background:none;border:0;font-size:26px;cursor:pointer}
+.hero{background:var(--green);color:#fff;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero::after{content:"ሰራተኛ";position:absolute;right:-20px;bottom:-60px;font-size:260px;font-weight:800;color:rgba(255,255,255,.06);line-height:1;pointer-events:none}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.1;max-width:760px;margin-bottom:16px}
+.hero p{max-width:600px;font-size:18px;opacity:.92;margin-bottom:28px}
+.badge{display:inline-block;background:rgba(255,255,255,.14);padding:5px 14px;border-radius:99px;font-size:14px;margin-bottom:18px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:10px;padding:13px 24px;font-weight:700;font-size:16px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn-gold{background:var(--gold);color:#2a1d00}
+.btn-line{background:transparent;color:#fff;border:2px solid #fff}
+.btn-green{background:var(--green2);color:#fff}
+.search{margin:-36px auto 0;position:relative;z-index:5;background:#fff;border-radius:14px;padding:14px;display:flex;gap:10px;box-shadow:0 12px 30px rgba(20,83,45,.15);max-width:860px}
+.search input,.search select{flex:1;border:1px solid var(--line);border-radius:9px;padding:12px}
+section{padding:64px 0}
+.title{margin-bottom:28px}
+.title h2{font-size:30px}
+.title p{color:var(--muted)}
+.cats{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:99px;padding:10px 18px;font-weight:600;cursor:pointer;font-size:15px}
+.chip:hover,.chip.on{background:var(--green2);color:#fff;border-color:var(--green2)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.card h3{font-size:18px}
+.role{color:var(--green2);font-weight:700;font-size:14px}
+.ok{align-self:flex-start;background:#e3f4ea;color:var(--green2);font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.meta{font-size:14px;color:var(--muted);margin:6px 0 10px}
+.acts{display:flex;gap:8px;margin-top:auto}
+.acts>*{flex:1;text-align:center;text-decoration:none;padding:10px;border-radius:8px;font-weight:700;font-size:14px;border:0;cursor:pointer}
+.call{background:var(--green2);color:#fff}.wa{background:var(--wa);color:#fff}.ghost{background:#eef2ef;color:var(--ink);width:100%;margin-top:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{border-left:4px solid var(--gold);padding:4px 0 4px 16px}
+.step h3{margin-bottom:4px}
+.step p{color:var(--muted)}
+.forms{background:#e9f1ec}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+form{background:#fff;border-radius:14px;padding:26px;border:1px solid var(--line)}
+form h2{margin-bottom:4px}
+form>p{color:var(--muted);margin-bottom:16px}
+label{display:block;font-weight:700;font-size:14px;margin:12px 0 5px}
+form input,form select,form textarea{width:100%;padding:11px;border:1px solid #cfd8d2;border-radius:8px}
+textarea{min-height:80px;resize:vertical}
+form .btn{width:100%;margin-top:18px}
+footer{background:#0f2418;color:#cfe0d5;padding:38px 0 20px}
+.fg{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{display:block;text-decoration:none;color:#cfe0d5;margin:4px 0}
+.copy{margin-top:24px;padding-top:16px;border-top:1px solid #2a4033;font-size:13px;display:flex;justify-content:space-between}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;padding:20px;overflow:auto}
+.modal.on{display:block}
+.mbox{max-width:460px;margin:60px auto;background:#fff;border-radius:14px;padding:26px;position:relative}
+.x{position:absolute;right:16px;top:10px;border:0;background:none;font-size:28px;cursor:pointer}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(90px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:10px;z-index:200;transition:.3s;max-width:90%}
+.toast.on{transform:translateX(-50%)}
+#admin{display:none;background:#fff;border-top:4px solid var(--gold)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:24px}
+td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
+@media(max-width:800px){
+nav{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;flex-direction:column;padding:18px;border-bottom:1px solid var(--line)}
+nav.on{display:flex}.burger{display:block}
+.grid,.steps,.two{grid-template-columns:1fr}
+.search{flex-direction:column;margin:-30px 16px 0}
+.hero::after{font-size:150px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+<a class="logo" href="#home">ሰራተኛ<small>Seratagna</small></a>
+<button class="burger" onclick="document.getElementById('nav').classList.toggle('on')" aria-label="Menu">☰</button>
+<nav id="nav">
+<a href="#home" data-i="home">Home</a>
+<a href="#workers" data-i="workers">Find workers</a>
+<a href="#post" data-i="post">Post a request</a>
+<a href="#register" data-i="register">Find a job</a>
+<select class="lang" id="lang" onchange="setLang(this.value)" aria-label="Language">
+<option value="en">English</option><option value="am">አማርኛ</option><option value="om">Afaan Oromoo</option>
+</select>
+</nav>
+</div></header>
+
+<div class="hero" id="home"><div class="wrap">
+<span class="badge" data-i="badge">🇪🇹 Serving Bale Robe and all Ethiopia</span>
+<h1 data-i="h1">Looking for a worker? Find one you can trust.</h1>
+<p data-i="sub">Seratagna connects employers with verified workers for homes, businesses and temporary jobs. Call or message them directly.</p>
+<div class="btns">
+<a class="btn btn-gold" href="#post" data-i="needW">📋 I need a worker</a>
+<a class="btn btn-line" href="#register" data-i="needJ">👤 I need a job</a>
+</div>
+</div></div>
+
+<div class="wrap"><div class="search">
+<input id="q" placeholder="Search by name, job or place" data-p="ph" oninput="render()">
+<select id="cat" onchange="render()"></select>
+<button class="btn btn-green" onclick="render();go('workers')" data-i="search">Search</button>
+</div></div>
+
+<section id="workers"><div class="wrap">
+<div class="title"><h2 data-i="wt">Available workers</h2><p data-i="ws">Contact workers directly by phone or WhatsApp.</p></div>
+<div class="cats" id="chips" style="margin-bottom:22px"></div>
+<div class="grid" id="list"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="title"><h2 data-i="how">How it works</h2></div>
+<div class="steps">
+<div class="step"><h3 data-i="s1">Tell us what you need</h3><p data-i="s1d">Choose the worker type, location and pay.</p></div>
+<div class="step"><h3 data-i="s2">Compare profiles</h3><p data-i="s2d">Browse registered workers and their experience.</p></div>
+<div class="step"><h3 data-i="s3">Contact directly</h3><p data-i="s3d">Call or send a WhatsApp message, no middleman.</p></div>
+</div></div></section>
+
+<section class="forms"><div class="wrap two">
+
+<form id="post" onsubmit="sendJob(event)">
+<h2 data-i="fj">I need a worker</h2><p data-i="fjd">Post your request and workers will contact you.</p>
+<label data-i="name">Your name</label><input id="jn" required>
+<label data-i="phone">Phone number</label><input id="jp" type="tel" placeholder="09XXXXXXXX" required>
+<label data-i="wtype">Worker type</label><select id="jc" required></select>
+<label data-i="loc">Location</label><input id="jl" placeholder="Bale Robe" required>
+<label data-i="emp">Employment type</label>
+<select id="je"><option>Full-time</option><option>Part-time</option><option>Daily</option><option>Temporary</option><option>Contract</option></select>
+<label data-i="pay">Salary offer</label><input id="js" placeholder="8,000 ETB">
+<label data-i="desc">Description</label><textarea id="jd"></textarea>
+<button class="btn btn-green" data-i="sendJ">Post request</button>
+</form>
+
+<form id="register" onsubmit="sendWorker(event)">
+<h2 data-i="fw">I need a job</h2><p data-i="fwd">Create a profile so employers can find you.</p>
+<label data-i="fname">Full name</label><input id="wn" required>
+<label data-i="phone">Phone number</label><input id="wp" type="tel" placeholder="09XXXXXXXX" required>
+<label data-i="wjob">Job you want</label><select id="wc" required></select>
+<label data-i="loc">Location</label><input id="wl" placeholder="Bale Robe" required>
+<label data-i="exp">Experience</label>
+<select id="we"><option>No experience</option><option>Less than 1 year</option><option>1-2 years</option><option>3-5 years</option><option>5+ years</option></select>
+<label data-i="skills">Skills</label><textarea id="wk"></textarea>
+<label data-i="sal">Expected salary</label><input id="ws" placeholder="6,000 ETB">
+<button class="btn btn-green" data-i="sendW">Create my profile</button>
+</form>
+
+</div></section>
+
+<section id="admin"><div class="wrap">
+<div class="title"><h2>Admin</h2></div>
+<div id="adm"></div>
+<button class="btn ghost" style="width:auto;padding:10px 20px" onclick="adminOut()">Log out</button>
+</div></section>
+
+<footer><div class="wrap">
+<div class="fg">
+<div><strong style="color:#fff;font-size:18px">ሰራተኛ | Seratagna</strong><p data-i="foot">Connecting workers and employers across Ethiopia.</p></div>
+<div><a href="tel:+251900000000">📞 +251 900 000 000</a><a href="https://wa.me/251900000000" target="_blank" rel="noopener">💬 WhatsApp</a><a href="mailto:info@seratagna.com">📧 info@seratagna.com</a></div>
+</div>
+<div class="copy"><span>© 2026 Seratagna</span><a href="#" onclick="adminIn();return false" style="display:inline;font-size:12px;opacity:.6">Admin</a></div>
+</div></footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeM()"><div class="mbox">
+<button class="x" onclick="closeM()" aria-label="Close">&times;</button>
+<div id="mb"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+/* ---- SUPABASE CREDENTIALS ---- */
+const SUPABASE_URL = "https://ggddzburafcckovkarwe.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdnZGR6YnVyYWZjY2tvdmthcndlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA4NTgzOTQsImV4cCI6MjEwNjQzNDM5NH0.YvpvLy3mmrzJc0vDKVAuai_Ikp4JvO7-ctEcA5-E6tE";
+const ADMIN_PASSCODE = "seratagna2026";
+const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
+
+const CATS=["Housekeeper","Cook","Babysitter","Driver","Security Guard","Cleaner","Secretary","Salesperson","Construction Worker","Farm Worker","Caregiver","Other"];
+const T={
+en:{home:"Home",workers:"Find workers",post:"Post a request",register:"Find a job",badge:"🇪🇹 Serving Bale Robe and all Ethiopia",h1:"Looking for a worker? Find one you can trust.",sub:"Seratagna connects employers with verified workers for homes, businesses and temporary jobs. Call or message them directly.",needW:"📋 I need a worker",needJ:"👤 I need a job",ph:"Search by name, job or place",search:"Search",all:"All categories",wt:"Available workers",ws:"Contact workers directly by phone or WhatsApp.",how:"How it works",s1:"Tell us what you need",s1d:"Choose the worker type, location and pay.",s2:"Compare profiles",s2d:"Browse registered workers and their experience.",s3:"Contact directly",s3d:"Call or send a WhatsApp message, no middleman.",fj:"I need a worker",fjd:"Post your request and workers will contact you.",name:"Your name",phone:"Phone number",wtype:"Worker type",loc:"Location",emp:"Employment type",pay:"Salary offer",desc:"Description",sendJ:"Post request",fw:"I need a job",fwd:"Create a profile so employers can find you.",fname:"Full name",wjob:"Job you want",exp:"Experience",skills:"Skills",sal:"Expected salary",sendW:"Create my profile",foot:"Connecting workers and employers across Ethiopia.",call:"📞 Call",profile:"View profile",ver:"✓ Verified",none:"No workers match yet. Try another search or register as a worker.",okJ:"Request posted. Workers will contact you.",okW:"Profile created. Employers can now find you.",err:"Could not save. Check your connection and try again.",demo:"Demo mode: connect Supabase to save.",msg:"Hello, I saw your worker profile on Seratagna."},
+am:{home:"መነሻ",workers:"ሰራተኛ ፈልግ",post:"ጥያቄ ያስገቡ",register:"ስራ ፈልግ",badge:"🇪🇹 ባሌ ሮቤንና መላ ኢትዮጵያን እናገለግላለን",h1:"ሰራተኛ ይፈልጋሉ? የሚታመን ሰራተኛ ያግኙ።",sub:"ሰራተኛ ቀጣሪዎችን ከተረጋገጡ ሰራተኞች ጋር ያገናኛል። በቀጥታ ይደውሉ ወይም መልእክት ይላኩ።",needW:"📋 ሰራተኛ እፈልጋለሁ",needJ:"👤 ስራ እፈልጋለሁ",ph:"በስም፣ በስራ ወይም በቦታ ይፈልጉ",search:"ፈልግ",all:"ሁሉም ዓይነት",wt:"ያሉ ሰራተኞች",ws:"ሰራተኞችን በስልክ ወይም በዋትስአፕ በቀጥታ ያግኙ።",how:"እንዴት ይሰራል",s1:"የሚፈልጉትን ይንገሩን",s1d:"የሰራተኛ ዓይነት፣ ቦታ እና ክፍያ ይምረጡ።",s2:"መገለጫዎችን ያወዳድሩ",s2d:"የተመዘገቡ ሰራተኞችንና ልምዳቸውን ይመልከቱ።",s3:"በቀጥታ ይገናኙ",s3d:"ይደውሉ ወይም በዋትስአፕ ይላኩ፤ ደላላ አያስፈልግም።",fj:"ሰራተኛ እፈልጋለሁ",fjd:"ጥያቄዎን ያስገቡ፤ ሰራተኞች ያገኙዎታል።",name:"ስምዎ",phone:"ስልክ ቁጥር",wtype:"የሰራተኛ ዓይነት",loc:"አካባቢ",emp:"የቅጥር ዓይነት",pay:"የደመወዝ ሃሳብ",desc:"መግለጫ",sendJ:"ጥያቄ አስገባ",fw:"ስራ እፈልጋለሁ",fwd:"ቀጣሪዎች እንዲያገኙዎት መገለጫ ይፍጠሩ።",fname:"ሙሉ ስም",wjob:"የሚፈልጉት ስራ",exp:"የስራ ልምድ",skills:"ችሎታዎች",sal:"የሚጠበቅ ደመወዝ",sendW:"መገለጫዬን ፍጠር",foot:"በመላ ኢትዮጵያ ሰራተኞችንና ቀጣሪዎችን እናገናኛለን።",call:"📞 ደውል",profile:"መገለጫ ይመልከቱ",ver:"✓ የተረጋገጠ",none:"እስካሁን የሚስማማ ሰራተኛ የለም።",okJ:"ጥያቄዎ ተልኳል።",okW:"መገለጫዎ ተፈጥሯል።",err:"ማስቀመጥ አልተቻለም። እንደገና ይሞክሩ።",demo:"የሙከራ ሁነታ፡ ለማስቀመጥ Supabase ያገናኙ።",msg:"ሰላም፣ የሰራተኛ መገለጫዎን በሰራተኛ (Seratagna) ላይ አይቻለሁ።"},
+om:{home:"Mana",workers:"Hojjettoota Barbaadi",post:"Gaaffii Galchi",register:"Hojii Barbaadi",badge:"🇪🇹 Baalee Robee fi Itoophiyaa guutuuf tajaajila",h1:"Hojjetaa barbaaddaa? Kan amanamu argadhaa.",sub:"Seratagna qacartoota hojjettoota mirkanaa'anii wajjin walquunnamsiisa. Kallattiin bilbilaa ykn ergaa ergaa.",needW:"📋 Hojjetaa Nan Barbaada",needJ:"👤 Hojii Nan Barbaada",ph:"Maqaa, hojii ykn bakkaan barbaadi",search:"Barbaadi",all:"Gosa hunda",wt:"Hojjettoota jiran",ws:"Hojjettoota bilbilaan ykn WhatsApp'iin kallattiin quunnamaa.",how:"Akkamitti hojjeta",s1:"Kan barbaaddan nuu himaa",s1d:"Gosa hojjetaa, bakka fi mindaa filadhaa.",s2:"Profaayilii wal bira qabaa",s2d:"Hojjettoota galmaa'an fi muuxannoo isaanii ilaalaa.",s3:"Kallattiin quunnamaa",s3d:"Bilbilaa ykn WhatsApp'iin quunnamaa, dilaalaa hin barbaachisu.",fj:"Hojjetaa Nan Barbaada",fjd:"Gaaffii keessan galchaa, hojjettoonni isin quunnamu.",name:"Maqaa keessan",phone:"Lakkoofsa bilbilaa",wtype:"Gosa hojjetaa",loc:"Bakka",emp:"Gosa qacarrii",pay:"Mindaa dhiyaatu",desc:"Ibsa",sendJ:"Gaaffii Galchi",fw:"Hojii Nan Barbaada",fwd:"Qacartoonni isin argachuuf profaayilii uumaa.",fname:"Maqaa guutuu",wjob:"Hojii barbaaddan",exp:"Muuxannoo",skills:"Dandeettii",sal:"Mindaa eegamu",sendW:"Profaayilii Koo Uumi",foot:"Hojjettootaa fi qacartoota Itoophiyaa keessatti walquunnamsiifna.",call:"📞 Bilbili",profile:"Profaayilii ilaali",ver:"✓ Mirkanaa'e",none:"Ammaaf hojjetaan wal simu hin jiru.",okJ:"Gaaffiin keessan galmaa'eera.",okW:"Profaayiliin keessan uumameera.",err:"Kuusuu hin dandeenye. Irra deebi'aa yaalaa.",demo:"Haala qorannoo: Supabase walqabsiisaa.",msg:"Akkam, profaayilii hojjetaa keessan Seratagna irratti argeera."}
+};
+
+const CN={am:{"Housekeeper":"የቤት ሰራተኛ","Cook":"ምግብ አብሳይ","Babysitter":"ህጻናት ተንከባካቢ","Driver":"ሹፌር","Security Guard":"ጥበቃ","Cleaner":"ጽዳት ሰራተኛ","Secretary":"ጸሐፊ","Salesperson":"ሻጭ","Construction Worker":"የግንባታ ሰራተኛ","Farm Worker":"የእርሻ ሰራተኛ","Caregiver":"ተንከባካቢ","Other":"ሌላ"},
+om:{"Housekeeper":"Hojjetaa Manaa","Cook":"Nyaata Bilcheessaa","Babysitter":"Kunuunsaa Daa'imaa","Driver":"Konkolaachisaa","Security Guard":"Eegduu","Cleaner":"Qulqulleessaa","Secretary":"Barreessaa","Salesperson":"Gurgurtaa","Construction Worker":"Hojjetaa Ijaarsaa","Farm Worker":"Hojjetaa Qonnaa","Caregiver":"Kunuunsaa","Other":"Kan biraa"}};
+
+let L=localStorage.getItem("sl")||"en",W=[],catF="";
+const t=k=>(T[L]&&T[L][k])||T.en[k]||k;
+const cn=c=>(CN[L]&&CN[L][c])||c;
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const num=p=>{p=String(p).replace(/\D/g,"");if(p.startsWith("0"))p="251"+p.slice(1);return p};
+const go=id=>document.getElementById(id).scrollIntoView({behavior:"smooth"});
+function toast(m){const e=document.getElementById("toast");e.textContent=m;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),3500)}
+
+function setLang(l){
+  L=l;localStorage.setItem("sl",l);document.documentElement.lang=l;document.getElementById("lang").value=l;
+  document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));
+  document.querySelectorAll("[data-p]").forEach(e=>e.placeholder=t(e.dataset.p));
+  const opts=CATS.map(c=>`<option value="${c}">${esc(cn(c))}</option>`).join("");
+  ["jc","wc"].forEach(id=>document.getElementById(id).innerHTML=opts);
+  document.getElementById("cat").innerHTML=`<option value="">${t("all")}</option>`+opts;
+  document.getElementById("chips").innerHTML=CATS.slice(0,8).map(c=>`<button class="chip ${catF===c?"on":""}" onclick="chip('${c}')">${esc(cn(c))}</button>`).join("");
+  render();
+}
+function chip(c){catF=catF===c?"":c;setLang(L);document.getElementById("cat").value=catF;render()}
+
+const DEMO=[
+{full_name:"Abebe Kebede",specialty:"Driver",location:"Bale Robe",experience:"3-5 years",expected_salary:"8,000 - 12,000 ETB",phone:"0911000001",verified:true,skills:"Licensed, knows regional roads"},
+{full_name:"Hana Alemu",specialty:"Housekeeper",location:"Bale Robe",experience:"1-2 years",expected_salary:"5,000 - 8,000 ETB",phone:"0911000002",verified:true,skills:"Cleaning, laundry, cooking"},
+{full_name:"Mohammed Ali",specialty:"Security Guard",location:"Addis Ababa",experience:"3-5 years",expected_salary:"6,000 - 9,000 ETB",phone:"0911000003",verified:true,skills:"Night shifts, first aid"}];
+
+async function load(){
+  if(!sb){W=DEMO;return render()}
+  const{data,error}=await sb.from("workers").select("*").order("created_at",{ascending:false});
+  if(error) console.error("Error fetching workers:", error);
+  W=(error || !data)?[]:data;
+  render();
+}
+function render(){
+  const q=document.getElementById("q").value.toLowerCase().trim(),c=document.getElementById("cat").value;
+  const f=W.map((w,i)=>({w,i})).filter(({w})=>(!c||w.specialty===c)&&(!q||[w.full_name,w.specialty,w.location,cn(w.specialty)].join(" ").toLowerCase().includes(q)));
+  document.getElementById("list").innerHTML=f.length?f.map(({w,i})=>`<div class="card">
+  <span class="role">${esc(cn(w.specialty))}</span><h3>${esc(w.full_name)}</h3>
+  ${w.verified?`<span class="ok">${t("ver")}</span>`:""}
+  <div class="meta">📍 ${esc(w.location)}<br>💼 ${esc(w.experience||"-")}<br>💰 ${esc(w.expected_salary||"-")}</div>
+  <div class="acts"><a class="call" href="tel:+${num(w.phone)}">${t("call")}</a><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${num(w.phone)}?text=${encodeURIComponent(t("msg"))}">💬 WhatsApp</a></div>
+  <button class="ghost" style="border:0;border-radius:8px;padding:10px;font-weight:700;cursor:pointer" onclick="openP(${i})">${t("profile")}</button></div>`).join(""):`<div class="empty">${t("none")}</div>`;
+}
+function openP(i){const w=W[i];
+  document.getElementById("mb").innerHTML=`<h2>${esc(w.full_name)}</h2><p class="role">${esc(cn(w.specialty))}</p>${w.verified?`<span class="ok">${t("ver")}</span>`:""}
+  <p class="meta" style="font-size:15px">📍 ${esc(w.location)}<br>💼 ${esc(w.experience||"-")}<br>💰 ${esc(w.expected_salary||"-")}<br>🛠️ ${esc(w.skills||"-")}</p>
+  <div class="acts"><a class="call" href="tel:+${num(w.phone)}">${t("call")}</a><a class="wa" target="_blank" rel="noopener" href="https://wa.me/${num(w.phone)}?text=${encodeURIComponent(t("msg"))}">💬 WhatsApp</a></div>`;
+  document.getElementById("modal").classList.add("on")}
+function closeM(){document.getElementById("modal").classList.remove("on")}
+
+async function save(table,row,form,okKey){
+  if(!sb){toast(t("demo"));return}
+  const b=form.querySelector("button");b.disabled=true;
+  const{error}=await sb.from(table).insert([row]);b.disabled=false;
+  if(error){console.error("Save error:", error);return toast(t("err"))}
+  form.reset();toast(t(okKey));if(table==="workers")load();
+}
+const v=id=>document.getElementById(id).value.trim();
+function sendJob(e){e.preventDefault();save("job_requests",{employer_name:v("jn"),phone:v("jp"),worker_category:v("jc"),location:v("jl"),employment_type:v("je"),salary_offer:v("js"),description:v("jd")},e.target,"okJ")}
+function sendWorker(e){e.preventDefault();save("workers",{full_name:v("wn"),phone:v("wp"),specialty:v("wc"),location:v("wl"),experience:v("we"),skills:v("wk"),expected_salary:v("ws")},e.target,"okW")}
+
+/* ---- Admin ---- */
+function adminIn(){
+  if(prompt("Admin passcode")!==ADMIN_PASSCODE)return;
+  document.getElementById("admin").style.display="block";adminLoad();go("admin")}
+function adminOut(){document.getElementById("admin").style.display="none"}
+async function adminLoad(){
+  const box=document.getElementById("adm");
+  if(!sb){box.textContent=t("demo");return}
+  const[a,b]=await Promise.all([sb.from("workers").select("*").order("created_at",{ascending:false}),sb.from("job_requests").select("*").order("created_at",{ascending:false})]);
+  box.innerHTML=`<h3>Workers</h3><div style="overflow:auto"><table>${(a.data||[]).map(w=>`<tr><td>${esc(w.full_name)}</td><td>${esc(w.phone)}</td><td>${esc(w.specialty)}</td><td>${w.verified?"Verified":"Pending"}</td><td><button onclick="adm('workers','${w.id}','verify')">Verify</button> <button onclick="adm('workers','${w.id}','del')">Delete</button></td></tr>`).join("")||"<tr><td>-</td></tr>"}</table></div>
+  <h3>Requests</h3><div style="overflow:auto"><table>${(b.data||[]).map(r=>`<tr><td>${esc(r.employer_name)}</td><td>${esc(r.phone)}</td><td>${esc(r.worker_category)}</td><td>${esc(r.status)}</td><td><button onclick="adm('job_requests','${r.id}','approve')">Approve</button> <button onclick="adm('job_requests','${r.id}','del')">Delete</button></td></tr>`).join("")||"<tr><td>-</td></tr>"}</table></div>`;
+}
+async function adm(tb,id,act){
+  if(act==="del"){if(!confirm("Delete this record?"))return;await sb.from(tb).delete().eq("id",id)}
+  else await sb.from(tb).update(act==="verify"?{verified:true,status:"verified"}:{status:"approved"}).eq("id",id);
+  adminLoad();load();
+}
+
+setLang(L);load();
+</script>
+</body>
+</html>
